@@ -1,5 +1,3 @@
-#enable_html_escaping()
-
 <!-- Start of the git Project Tab -->
 <div class="projectPanel">
     <div class="header">

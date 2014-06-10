@@ -4,33 +4,26 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.xiplink.jira.git</groupId>
     <artifactId>jira-git-plugin</artifactId>
-    <version>0.6.1-SNAPSHOT</version>
+    <version>0.6.17</version>
 
-    <name>JIRA Git plugin</name>
+    <name>JIRA Git plugin Mail.Ru</name>
     <packaging>atlassian-plugin</packaging>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jira.version>5.0.1</jira.version>
-        <jira.data.version>5.0.1</jira.data.version>
-    </properties>
-
     <description>Git Jira plugin</description>
-    <url>https://studio.plugins.atlassian.com/wiki/display/JGIT/JIRA+Git+Plugin</url>
+    <url>http://mail.ru</url>
 
     <dependencies>
         <dependency>
-            <groupId>com.atlassian.jira</groupId>
-            <artifactId>jira-api</artifactId>
-            <version>${jira.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.atlassian.jira</groupId>
-            <artifactId>jira-core</artifactId>
-            <version>${jira.version}</version>
-            <scope>provided</scope>
-        </dependency>
+			<groupId>com.atlassian.jira</groupId>
+			<artifactId>atlassian-jira</artifactId>
+			<version>${jira.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.atlassian.jira</groupId>
+			<artifactId>jira-sal-plugin</artifactId>
+			<version>${jira.version}</version>
+			<scope>provided</scope>
+		</dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -43,11 +36,11 @@
             <version>${jira.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.eclipse.jgit</groupId>
-            <artifactId>org.eclipse.jgit</artifactId>
-            <version>0.10.1</version>
-        </dependency>
+		<dependency>
+			<groupId>org.eclipse.jgit</groupId>
+			<artifactId>org.eclipse.jgit</artifactId>
+			<version>3.2.0.201312181205-r</version>
+		</dependency>
         <dependency>
             <groupId>com.jcraft</groupId>
             <artifactId>jsch</artifactId>
@@ -65,69 +58,14 @@
             <version>3.2.0</version>
             <scope>provided</scope>
         </dependency>
-<!--
-        <dependency>
-            <groupId>opensymphony</groupId>
-            <artifactId>oscore</artifactId>
-            <version>2.2.7-atlassian-1</version>
-            <scope>compile</scope>
-        </dependency>
--->
     </dependencies>
-
-    <developers>
-        <developer>
-            <name>J. Longman</name>
-            <organization>XipLink, Inc.</organization>
-        </developer>
-        <developer>
-            <name>Ivan Sungurov</name>
-            <organization>Reliadev</organization>
-            <organizationUrl>http://www.reliadev.com</organizationUrl>
-        </developer>
-    </developers>
-
-    <scm>
-        <connection>scm:svn:https://studio.plugins.atlassian.com/svn/JGIT</connection>
-        <developerConnection>scm:svn:https://studio.plugins.atlassian.com/svn/JGIT</developerConnection>
-    </scm>
-
-    <distributionManagement>
-        <repository>
-            <id>atlassian-contrib</id>
-            <name>Atlassian Contrib Repository</name>
-            <url>davs://maven.atlassian.com/contrib</url>
-        </repository>
-        <snapshotRepository>
-            <id>atlassian-contrib-snapshot</id>
-            <name>Atlassian Contrib Snapshot Repository</name>
-            <url>davs://maven.atlassian.com/contrib-snapshot</url>
-        </snapshotRepository>
-    </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>atlassian-public-repository</id>
-            <url>http://maven.atlassian.com/repository/public</url>
-        </repository>
-        <repository>
-            <id>jgit-repository</id>
-            <url>http://download.eclipse.org/jgit/maven</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>atlassian-public-repository</id>
-            <url>https://maven.atlassian.com/content/groups/public</url>
-        </pluginRepository>
-    </pluginRepositories>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>com.atlassian.maven.plugins</groupId>
                 <artifactId>maven-jira-plugin</artifactId>
-                <version>3.9.1</version>
+                <version>${amps.version}</version>
                 <extensions>true</extensions>
                 <configuration>
                     <productVersion>${jira.version}</productVersion>
@@ -135,15 +73,19 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
                 <configuration>
-                    <source>1.5</source>
-                    <target>1.5</target>
+                    <source>1.6</source>
+                    <target>1.6</target>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <properties>
+        <jira.version>5.0.4</jira.version>
+        <jira.data.version>5.0</jira.data.version>
+        <amps.version>4.0</amps.version>
+    </properties>
 
 </project>
