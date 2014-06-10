@@ -11,6 +11,14 @@
 	<packaging>atlassian-plugin</packaging>
 	<description>Git Jira plugin</description>
 	<url>http://mail.ru</url>
+	
+	<repositories>  
+        <repository>
+                <id>jira</id>
+                <name>Jira Allods Team maven repo</name>
+                <url>http://s1-artifactory.mail.msk/artifactory/jira</url>
+            </repository>
+    </repositories>
 
 	<dependencies>
 		<dependency>
