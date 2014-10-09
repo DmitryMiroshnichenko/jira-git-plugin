@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.xiplink.jira.git</groupId>
 	<artifactId>jira-git-plugin</artifactId>
-	<version>0.6.18</version>
+	<version>0.6.19</version>
 
 	<name>JIRA Git plugin Mail.Ru</name>
 	<packaging>atlassian-plugin</packaging>
@@ -81,6 +81,12 @@
 					<productDataVersion>${jira.data.version}</productDataVersion>
 				</configuration>
 			</plugin>
+			<plugin>
+	        	<groupId>com.atlassian.maven.plugins</groupId>
+		        <artifactId>maven-amps-plugin</artifactId>
+		        <version>${amps.version}</version>
+		        <extensions>true</extensions>
+    		</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
